@@ -10,7 +10,6 @@ class Solution:
         mapped[ord(s[j])] = 1
 
         for i in range(1, sz):
-            print(ord(s[i]))
             order = ord(s[i])
             
             mapped[order] += 1
