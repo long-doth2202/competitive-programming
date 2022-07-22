@@ -12,6 +12,6 @@ class Solution:
             if node is not None:
                 arr.append(node.val)
                 preorder(node.left)
-                preorder(node.right)
+                preorder(node.right)    
         preorder(root)
         return arr
