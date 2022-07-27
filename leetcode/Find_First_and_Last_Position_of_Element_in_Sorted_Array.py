@@ -18,4 +18,5 @@ class Solution:
         else:
           ans.append(-1)
 
+
         return ans
