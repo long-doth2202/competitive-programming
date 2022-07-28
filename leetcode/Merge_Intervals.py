@@ -2,7 +2,7 @@ class ListNode:
   def __init__(self, key, val, nxt):
     self.key = key
     self.val = val
-    self.next = nxt
+    self.nxt = nxt
 
 class MyHashMap:
 
@@ -14,7 +14,7 @@ class MyHashMap:
   def hash(self, key):
     return key * self.mult % self.size
       
-  def put(self, key: int, value: int) -> None:
+  def put(self, key: int, val: int) -> None:
     self.remove(key)
     h = self.hash(key)
     node = ListNode(key, val, self.data[h])
@@ -25,7 +25,7 @@ class MyHashMap:
     node = self.data[h]
     while node:
       if node.key == key: return node.val
-      node = node.next
+      node = node.nxt
     return -1
 
   def remove(self, key: int) -> None:
@@ -33,10 +33,10 @@ class MyHashMap:
     node = self.data[h]
     if not node: return
     if node.key == key:
-      self.data[h] = node.next
+      self.data[h] = node.nxt
       return
-    while node.next:
-      if node.next.key == key:
-        node.next = node.next.next
+    while node.nxt:
+      if node.nxt.key == key:
+        node.nxt = node.nxt.nxt
         return
-      node = node.next
+      node = node.nxt
